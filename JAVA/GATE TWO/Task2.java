@@ -5,7 +5,7 @@ public class Task1{
         
         for(int index =0; index<100; index++){
         
-            System.out.println(index+1 );
+            System.out.print(index+1 + " ");
            
         }
         

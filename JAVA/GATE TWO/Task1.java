@@ -5,10 +5,9 @@ public class Task1{
         
         for(int index =0; index<10; index++){
         
-            System.out.print(index+1 + " ");
+            System.out.println(index+1;
            
         }
         
-         System.out.println();
     }
 }
