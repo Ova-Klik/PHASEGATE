@@ -2,10 +2,12 @@ public class DayThreeFunction{
 
 
     public int [] modifyLengthOfAgivenArrayToSpecifiedLength(int [] numbers, int length){
-        
+    
+   
+        if(length<=0) return numbers;
         int [] newArray=new int [length];
         
-        if(length<=0) return numbers;
+        
             
             for(int index=0; index<newArray.length;index++){
             
@@ -17,4 +19,4 @@ public class DayThreeFunction{
             }
         return newArray;
     }
-}}
+}
