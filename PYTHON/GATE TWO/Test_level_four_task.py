@@ -107,9 +107,17 @@ class TestFunction(TestCase):
         self.assertEqual(actual,expected)
         
         
-    def test_that_principal_can_not_be_negative(self):
+    def test_that_function_returns_zero_with_negative_entry(self):
     
         expected = get_simple_interest(-10000,0.5,2)
         actual =0;
+        
+        self.assertEqual(actual,expected)
+        
+        
+    def test_that_function_returns_reverse_of_number(self):
+    
+        expected = get_reverse_of_number(1234)
+        actual =4321;
         
         self.assertEqual(actual,expected)

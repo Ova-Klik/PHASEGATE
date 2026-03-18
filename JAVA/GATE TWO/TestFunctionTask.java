@@ -200,7 +200,7 @@ public class TestFunctionTask{
    }
    
    @Test
-   public void testThatLengthCannotBeNegative(){
+   public void testThatFucnctionReturnsReverseOfNumber(){
         
      
         double expected = FunctionTaskLevel4.getReverseOfANumber(1234);

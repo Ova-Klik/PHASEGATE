@@ -47,5 +47,16 @@ def get_simple_interest(principal, rate, time):
     return simple_interest
     
     
+def get_reverse_of_number(number):
+    reversed_number= 0
+    while number!=0:
+    
+        digit=number%10
+        reversed_number = reversed_number * 10 + digit
+        number = number//10
+    
+    return reversed_number
+    
+    
     
 

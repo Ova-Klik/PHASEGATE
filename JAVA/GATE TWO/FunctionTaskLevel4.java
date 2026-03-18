@@ -80,9 +80,15 @@ public class FunctionTaskLevel4{
 
     public static double getReverseOfANumber( int number){       
         
-     
+        int reverse = 0;
+        while(number!=0){
         
-        return 4321;
+           int newNumber=number%10;
+            reverse= reverse*10 + newNumber;
+            number/=10;
+        }
+        
+        return reverse;
     }
     
 
