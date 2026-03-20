@@ -33,9 +33,9 @@ function splitArrayIntoEvenAndOdd(numbers) {
 
 
 function checkArrayPalindrome(numbers) {
-    const n = numbers.length;
-    for (let index= 0; index< Math.floor(n / 2); index++) {
-        if (numbers[index] !== numbers[n - 1 - index]) return false;
+    const number = numbers.length;
+    for (let index= 0; index< Math.floor(number / 2); index++) {
+        if (numbers[index] !== numbers[number - 1 - index]) return false;
     }
     return true;
 }
