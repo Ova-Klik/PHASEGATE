@@ -1,7 +1,9 @@
 const {
+    checkPerfectSquare,
     getPerfectSquares,
     checkArrayPalindrome,
     splitArrayIntoEvenAndOdd,
+    countEvenOdd,
     replaceNonPerfectSquaresWithMinusOne
 } = require('./DayFourLevelSix');
 
@@ -34,6 +36,7 @@ test('should check if array is a palindrome', () => {
 
     expect(actual).toBe(expected);
 });
+
 
 
 test('should return all perfect squares from array', () => {

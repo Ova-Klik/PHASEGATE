@@ -33,9 +33,9 @@ function splitArrayIntoEvenAndOdd(numbers) {
 
 
 function checkArrayPalindrome(numbers) {
-    const number = numbers.length;
-    for (let index= 0; index< Math.floor(number / 2); index++) {
-        if (numbers[index] !== numbers[number - 1 - index]) return false;
+    const numberLength = numbers.length;
+    for (let index= 0; index< Math.floor(numberLength / 2); index++) {
+        if (numbers[index] !== numbers[numberLength - 1 - index]) return false;
     }
     return true;
 }
@@ -43,8 +43,8 @@ function checkArrayPalindrome(numbers) {
 
 function checkPerfectSquare(number) {
     if (number < 0) return false;
-    const sqrt = Math.sqrt(number);
-    return sqrt === Math.floor(sqrt);
+    const squareRoot = number**0.5;
+    return (squareRoot*squareRoot) === number;
 }
 
 
@@ -56,10 +56,10 @@ function getPerfectSquares(numbers) {
     }
 
     const perfectSquares = new Array(count);
-    let index = 0;
+    let perfectIndex = 0;
     for (let index= 0; index< numbers.length; index++) {
         if (checkPerfectSquare(numbers[index])) {
-            perfectSquares[index++] = numbers[index];
+            perfectSquares[perfectIndex++] = numbers[index];
         }
     }
 
@@ -80,9 +80,11 @@ function replaceNonPerfectSquaresWithMinusOne(numbers) {
 }
 
 module.exports = {
+    checkPerfectSquare,
     getPerfectSquares,
     checkArrayPalindrome,
     splitArrayIntoEvenAndOdd,
+    countEvenOdd,
     replaceNonPerfectSquaresWithMinusOne
     
 };

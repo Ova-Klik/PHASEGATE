@@ -76,7 +76,7 @@ function getCommonElements(numbers) {
                 duplicates.push(numbers[index]);
                 break;
             }
-        }
+       } 
     }
 
     return duplicates;

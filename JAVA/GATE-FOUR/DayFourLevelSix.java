@@ -57,8 +57,8 @@ public class DayFourLevelSix{
 
     public boolean checkPerfectSquare(int number) {
         if (number < 0) return false;
-        double sqrt = Math.sqrt(number);
-        return sqrt == (int) sqrt; 
+        double squareRoot = Math.floor(number);
+        return squareRoot== (int) squareRoot; 
     }
 
     public int[] getPerfectSquares(int[] numbers) {
