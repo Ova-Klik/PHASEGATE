@@ -123,5 +123,45 @@ public class MilkyDoughnut{
     return flatArray;
     
     }
+
+    public boolean isValidIntersectElement(int[] numbers, int[] numbers2, int index) {
+        for (int counted = 0; counted < index; counted++) {
+            if (numbers[index] == numbers[counted]) {
+                return false;
+            }
+        }
+        for (int check = 0; check < numbers2.length; check++) {
+            if (numbers[index] == numbers2[check]) {
+                return true;
+            }
+        }
+        return false;
+    }
     
- }
+    public int countIntersect(int[] numbers, int[] numbers2) {
+        int count = 0;
+
+        for (int index = 0; index < numbers.length; index++) {
+            if (isValidIntersectElement(numbers, numbers2, index)) {
+                count++;
+            }
+        }
+
+        return count;
+}
+
+    public int[] getIntersect(int[] numbers, int[] numbers2) {
+
+        int count = countIntersect(numbers, numbers2);
+        int[] intersect = new int[count];
+
+        int newIndex = 0;
+
+            for (int index = 0; index < numbers.length; index++) {
+                if (isValidIntersectElement(numbers, numbers2, index)) {
+                    intersect[newIndex++] = numbers[index];
+                }
+            }
+            return intersect;
+}
+}

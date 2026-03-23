@@ -200,7 +200,7 @@ public class TestMilkyDoughnut{
     }
     
     @Test
-    public void testThatCountsElementOfA2DArray(){
+    public void testThatFunctionCountsElementOfA2DArray(){
     
         int [][] numbers = {{1,2,3},{4,5,6},{7,8,9}};
         
@@ -211,7 +211,7 @@ public class TestMilkyDoughnut{
     }
     
     @Test
-    public void testThatReturnsElementOfA2DArrayInALinearArray(){
+    public void testThatFunctionReturnsElementOfA2DArrayInALinearArray(){
     
         int [][] numbers = {{1,2,3},{4,5,6},{7,8,9}};
         
@@ -220,6 +220,28 @@ public class TestMilkyDoughnut{
         assertArrayEquals(actual,expected);
     
     }
-  
     
+    @Test
+    public void testThatFunctionCountIntersect(){
+    
+        int [] numbers = {7,1,2,3,4,3,7,2,9};
+        int [] numbers2 = {1,2,13,4,3,7,21,91};
+        
+        int expected = milky.countIntersect(numbers, numbers2);
+        int actual = 5;
+        assertEquals(actual,expected);
+    
+}
+    
+     @Test
+    public void testThatFunctionReturnsArrayOfIntersectElement(){
+    
+        int [] numbers = {7,1,2,3,4,3,7,2,9};
+        int [] numbers2 = {1,2,13,4,3,7,21,91};
+        
+        int []expected = milky.getIntersect(numbers, numbers2);
+        int []actual = {7,1,2,3,4};
+        assertArrayEquals(actual,expected);
+    
+}
 }
