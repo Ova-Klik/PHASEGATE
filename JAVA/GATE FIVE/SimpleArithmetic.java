@@ -16,6 +16,8 @@
 
 import java.util.Scanner;
 import java.util.Random;
+import java.time.*;
+
 
 public class SimpleArithmetic{
     
@@ -23,6 +25,8 @@ public class SimpleArithmetic{
     
         Random rand = new Random();
         Scanner input = new Scanner(System.in);
+//      String startTime = new LocalDateTime(DateTimeFormatter().format("yy:MM:dd mm:ss"));
+        
         int correctCount = 0;
         int wrongCount = 0;
         int operand1=0;
@@ -30,15 +34,11 @@ public class SimpleArithmetic{
        
         
         System.out.println("\n\tWELCOME TO SIMPLE SUBTRACTION ARITHMETIC APP\n");
-        
-      
       
         for(int question=1; question<=10;question++){
         
         operand1 = 10 + rand.nextInt(10);
         operand2 = rand.nextInt(10);
-        
-        
 
             for(int trial=0; trial<2; trial++){
             
@@ -54,8 +54,10 @@ public class SimpleArithmetic{
         }
         }
         
-        System.out.printf("You got %d Questions out of 10: Congratulations",correctCount);
+//        endTime = new LocalDateTime(DateTimeFormatter().format("yy:MM:dd mm:ss"));
         
+        System.out.printf("You got %d Questions out of 10: Congratulations%n%n",correctCount);
+//        System.out.printf("You started %s and finished %s", startTime, endTime);
     }
     }
 
