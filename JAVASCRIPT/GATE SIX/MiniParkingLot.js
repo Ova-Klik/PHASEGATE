@@ -61,9 +61,9 @@ function parkCarByLotNumber(lot, lotNumber, command) {
 function unparkCarByLotNumber(lot, lotNumber, command) {
     lotNumber = lotNumber - 1;
 
-    if (lotNumber <= 0) {
+    if (lotNumber <0) {
         return lot;
-    } else if (lotNumber > 0 && lotNumber <= 9 && command.toLowerCase() === "unassign") {
+    } else if (lotNumber >=0 && lotNumber <= 9 && command.toLowerCase() === "unassign") {
 
         if (lot[0][lotNumber] === 1) {
             lot[0][lotNumber] = 0;

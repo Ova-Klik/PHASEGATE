@@ -37,7 +37,7 @@ public class TestMiniParkingLot{
         
         assertEquals(actual,expected);
     }
-    
+  
     @Test
     public void testThatCarAutoMaticallyParksAtLot1WhenLotNumberIsNotSpecified(){
     

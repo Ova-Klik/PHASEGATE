@@ -61,9 +61,9 @@ public class MiniParkingLot{
     int length = countParkingLot(lot);
     lotNumber=lotNumber-1;
     
-            if (lotNumber<0 || >length-1) {
+            if (lotNumber<0 || lotNumber>length-1) {
                 return lot; 
-            }else if(lotNumber>0 && lotNumber<=9 && command.equalsIgnoreCase("assign")){
+            }else if(lotNumber>=0 && lotNumber<=9 && command.equalsIgnoreCase("assign")){
             
                    lot[0][lotNumber]=1;
                    return lot;
@@ -84,7 +84,7 @@ public class MiniParkingLot{
     
             if (lotNumber<0) {
                 return lot; 
-            }else if(lotNumber>0 && lotNumber<=9 && command.equalsIgnoreCase("unassign")){
+            }else if(lotNumber>=0 && lotNumber<=9 && command.equalsIgnoreCase("unassign")){
             
                    if (lot[0][lotNumber]==1){ 
                         lot[0][lotNumber]=0;
@@ -95,7 +95,7 @@ public class MiniParkingLot{
                         if (lot[0][lotNumber]==1){
                             int row = lotNumber/10;
                             int col = lotNumber%10;
-                            lot[row][col]=1;
+                            lot[row][col]=0;
                             
                             return lot;
                             
