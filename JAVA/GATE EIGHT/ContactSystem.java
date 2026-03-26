@@ -32,16 +32,17 @@ public class ContactSystem{
         
         System.out.printf("%n%nEnter option (0-6):");
         int option=input.nextInt();
+        input.nextLine();
         
         switch(option){
         
             case 0-> {
-                        System.out.printf("Thank you for using Contact Log System...");
+                        System.out.printf("Thank you for using Contact Log System...%n%n");
                         System.exit(0);
             }
-            case 1-> handleAddContact(ArrayList<String> contacts);
-            case 2-> removeContact(phoneNumber);
-//            case 3-> findContactByPhoneNumber(phoneNumber);
+            case 1-> handleAddContact(contacts);
+            case 2-> handleRemoveContact(contacts);
+//            case 3-> findContactByPhoneNumber(contacts);
 //            case 4-> findContactByFirstName(firstName);
 //            case 5-> findContactByLastName(lastName);
 //            case 6-> editContact();
@@ -52,39 +53,45 @@ public class ContactSystem{
    }  
    }
    
-   public void handleAddContact(ArrayList<String> contacts){
+   public ArrayList<String> handleAddContact(ArrayList<String> contacts){
    
         System.out.printf("%n Kindly enter Phone Number: ");
         String phoneNumber = input.nextLine();
         
+        int indexOfExistingPhoneNumbers=-1;
         for(int index=0; index<contacts.size(); index++){
-                if(contacts[index].equals(phoneNumber)){
+                if(contacts.get(index).equals(phoneNumber)){
                     
-                    System.out.printf("%nPhone Number already exists in log!!!");
+                    indexOfExistingPhoneNumbers = index;
                     break;
+                }
+                }
                 
-                }else{
+                if(indexOfExistingPhoneNumbers==-1){
+                   
                     System.out.printf("%n Kindly enter First Name: ");
                     String firstName = input.nextLine();
                     System.out.printf("%n Kindly enter Last Name: ");
                     String lastName = input.nextLine();
                 
-                    addContact(firstName,lastName,phoneNumber,ArrayList<String> contacts
-                   }     
+                    addContact(firstName,
+                                lastName,
+                                phoneNumber,
+                                contacts
+                                );
+                    System.out.printf("%nContact Added Successfully!!!");   
+                    return contacts;                  
+                
+                }else{
+                    
+                    System.out.printf("%nPhone Number already exists in log!!!");
+                    return contacts;
+                      
             }
-            System.out.printf("%nContact Added Successfully!!!");
         }
         
-   
-   public void addContact(String firstName,lastName,phoneNumber,ArrayList<String> contacts){
-   
-       
-                    contacts.add(phoneNumber);
-                    contacts.add(firstName);
-                    contacts.add(lastName);
-           
         
-    public void removeContact(firstName,lastName,phoneNumber,ArrayList<String> contacts){
+    public void handleRemoveContact(ArrayList<String> contacts){
    
         System.out.printf("%n Kindly enter Phone Number: ");
         String phoneNumber = input.nextLine();
@@ -92,29 +99,56 @@ public class ContactSystem{
         int indexToRemove = -1;
         
         for(int index=0; index<contacts.size(); index++){
-                if(contacts[index].equals(phoneNumber)){
-                    
-                    indexToRemove = contacts[index];
-                    break;
-                }
-                }
+            if(contacts.get(index).equals(phoneNumber)){
                 
-                if(indexToRemove!=-1){
-                    System.out.printf("%n Kindly enter First Name: ");
-                    String firstName = input.nextLine();
-                    System.out.printf("%n Kindly enter Last Name: ");
-                    String lastName = input.nextLine();
+                indexToRemove = index;
+                break;
+            }
+            }
+            
+            if(indexToRemove!=-1){
+                indexToRemove++;
+                String firstName = contacts.get(indexToRemove++);
+                String lastName = contacts.get(indexToRemove);
+                
+                removeContact(firstName,
+                            lastName,
+                            phoneNumber,
+                            contacts
+                            );
+                                
+                     System.out.printf("%n Contact removed successfully!!%n");
+         }else{
+                     System.out.printf("%n No contact to remove!!");
                     
-                    contacts[index++].remove(phoneNumber);
-                    contacts[index++].remove(firstName);
-                    contacts[index].remove(lastName);
-                        
-                    } else{
-                    
-                            System.out.printf("%n Phone number already exists!!!");
-                    
-                    }
-        }
+         }
+         }
+         
+   public ArrayList<String> addContact(
+                            String firstName,
+                            String lastName, 
+                            String phoneNumber, 
+                            ArrayList<String> contacts){
+
+        contacts.add(phoneNumber);
+        contacts.add(firstName);
+        contacts.add(lastName);
+           
+        return contacts;
+    }
+    public ArrayList<String> removeContact(
+                                String firstName,
+                                String lastName, 
+                                String phoneNumber,
+                                ArrayList<String> contacts){
+   
+        
+        contacts.remove(phoneNumber);
+        contacts.remove(firstName);
+        contacts.remove(lastName);
+            
+        return contacts;    
+     } 
         
    }
    
